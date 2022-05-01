@@ -11,3 +11,9 @@ p1.falar("Programação")
 p1.falar("Esporte")
 p1.parar_falar()
 p1.parar_falar()
+p1.get_ano_nascimento()
+
+
+p2: Pessoa = Pessoa.por_ano_nascimento("Maria", 2000)
+print(p2.idade)
+p2.get_ano_nascimento()

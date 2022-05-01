@@ -1,5 +1,8 @@
+import datetime
+
 
 class Pessoa:
+    ano_atual:int = datetime.date.today().year
     def __init__(self, nome:str, idade:int, comendo:bool = False, falando:bool = False):
         """
         Construtor
@@ -54,3 +57,12 @@ class Pessoa:
         print(f"{self.nome} parou de comer")
         self.comendo = False
 
+    def get_ano_nascimento(self):
+        ano_atual:int = datetime.date.today().year
+        ano_nascimento:int = ano_atual - self.idade
+        print(f"{self.nome} nasceu em {ano_nascimento}")
+
+    @classmethod
+    def por_ano_nascimento(cls, nome, ano_nascimento):
+        idade = cls.ano_atual - ano_nascimento
+        return cls(nome, idade)
